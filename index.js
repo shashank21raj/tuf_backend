@@ -16,6 +16,13 @@ app.get('/',(req,res)=>{
 
 app.use('/qna',qnaRouter)
 
-app.listen(5000,()=>{
+app.listen(5000, () => {
     console.log('Server is running on port 5000');
-})
+    db.connect((err) => {
+        if (err) {
+            console.error('Database connection failed:', err.stack);
+            return;
+        }
+        console.log('Connected to MySQL');
+    });
+});
