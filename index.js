@@ -3,7 +3,9 @@ import cors from 'cors';
 import qnaRouter from './router/qna.js';
 import mysql from 'mysql2'
 const app =express();
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
