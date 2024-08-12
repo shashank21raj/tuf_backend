@@ -4,7 +4,7 @@ import qnaRouter from './router/qna.js';
 import mysql from 'mysql2'
 const app =express();
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: ['http://localhost:3000',"https://tuf-frontend-eta.vercel.app"]
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
